@@ -12,7 +12,7 @@ Built to run inside **Claude Code**.
 
 ## Setup (one time, ~5 minutes)
 
-### 1. Get it
+Full step-by-step is in **[SETUP.md](SETUP.md)**. The short version:
 
 ```
 git clone https://github.com/bradford-marais/niche-outliers.git
@@ -20,16 +20,9 @@ cd niche-outliers
 claude
 ```
 
-### 2. Connect Apify + Notion
+The repo ships a `.mcp.json` that pre-wires the two connectors it needs — **Apify** (scraping) and **Notion** (your report). On first open, Claude Code asks you to approve them; say yes, then run `/mcp` and authenticate each in the browser. A free Apify account covers a top-10 pull.
 
-Two connectors, both done once in Claude Code:
-
-- **Apify** — connect the Apify MCP with your Apify API token. A free Apify account covers a top-10 pull easily. Get a token at apify.com → Settings → Integrations.
-- **Notion** — connect the Notion MCP so it can write your report page.
-
-### 3. (First run) pick where reports go
-
-The first time you file results, it asks which Notion page to put them under and saves it in `config.md`. After that it never asks again.
+First time you file results it asks which Notion page to put them under, saves it in `config.md`, and never asks again.
 
 ---
 

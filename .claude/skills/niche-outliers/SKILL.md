@@ -15,15 +15,14 @@ It scrapes **Instagram + TikTok** through Apify, ranks everything by views, and 
 
 ## Before you run it
 
-1. **Apify connected** in Claude Code (the Apify MCP, using your Apify API token). Free tier is plenty for a top-10 pull.
-2. **Notion connected** in Claude Code (the Notion MCP).
-3. **(First run only)** the skill asks which Notion page to file results under, then saves it in `config.md` so it never asks again.
+The Apify and Notion connectors must be live in Claude Code. They're pre-wired in this repo's `.mcp.json` — full walkthrough in **`SETUP.md`**. First run only, the skill asks which Notion page to file results under, then saves it in `config.md` so it never asks again.
 
 ---
 
 ## Workflow
 
 ```
+- [ ] Step 0: Check the connectors are live
 - [ ] Step 1: Get the niche
 - [ ] Step 2: Turn the niche into search terms
 - [ ] Step 3: Scrape Instagram via Apify
@@ -31,6 +30,15 @@ It scrapes **Instagram + TikTok** through Apify, ranks everything by views, and 
 - [ ] Step 5: Merge, dedupe, rank by views, take top 10
 - [ ] Step 6: Write the Notion page
 ```
+
+## Step 0: Check the connectors are live
+
+Before scraping, confirm both MCP servers are actually connected — an Apify tool and a Notion tool must be available this session.
+
+- If **Apify** isn't connected: stop and say *"Apify isn't connected — open `SETUP.md` and run `/mcp` to authenticate it,"* then exit. No point scraping without it.
+- If **Notion** isn't connected: you can still scrape and show the ranked top 10 in chat, but tell the coach Notion isn't connected (so nothing gets filed) and point them at `SETUP.md`.
+
+Don't guess or fabricate around a missing connector. Name what's missing and stop.
 
 ## Step 1: Get the niche
 
